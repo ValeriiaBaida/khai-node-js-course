@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+  # PostgreSQL service
   postgres:
     image: postgres
     container_name: node_course_postgres_container
@@ -11,6 +12,7 @@ services:
     ports:
       - "5432:5432"
 
+  # pgAdmin service
   pgadmin:
     image: dpage/pgadmin4
     container_name: node_course_pgadmin_container
