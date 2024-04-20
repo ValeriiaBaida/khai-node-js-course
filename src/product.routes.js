@@ -19,23 +19,11 @@ router.get('/products/:brand', blockSpecialBrand, (request, response) => {
  
     response.json(filteredProducts); // Send the filtered products as a JSON response
  });
- 
- 
- router.get('/products/id/:id', (request, response) => {
-    const { id } = request.params; // Access the id parameter  
   
-    const product = products.find(product => product.id === parseInt(id));
-   
-    response.json(product);  
- });
-
- 
- 
 router.get('/productswitherror', (request, response) => {
    let err = new Error("processing error ")
    err.statusCode = 400
    throw err
 });
-
 
 module.exports = router;
